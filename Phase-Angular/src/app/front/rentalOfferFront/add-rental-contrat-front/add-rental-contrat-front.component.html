@@ -1,0 +1,54 @@
+<app-navbarfront></app-navbarfront>
+<br>   
+   <br>   
+   <br>   
+   <br>   
+   <br>  
+   <br>  
+   <br>  
+   <br>  
+   <br>  
+   <br>  
+   <br>  
+   
+<!-- Content Start -->
+<div class="content">
+
+
+
+
+
+
+    <!-- Recent Sales Start -->
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <h3> Add Rental Contrat</h3>
+            </div>
+            <form  (ngSubmit)="addRentalContrat()">
+                <div class="row col-6">
+                    <div class="col-6">
+                        <label for="">Start</label>
+                        <input type="date" name="startdate" [(ngModel)]="contract.startdate" class="form-control">
+                    </div>
+             
+                    
+                  
+                    <div class="col-6">
+                        <label for="">Nombre de month</label>
+                        <input type="number" name="nbmonth" [(ngModel)]="contract.nbmonth" class="form-control">
+                    </div>
+
+                </div>
+                <button style="margin-top: 20px; width: 100%;" type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br>   
+   <br>   
+   <br>   
+   <br>   
+
+<app-footer></app-footer>

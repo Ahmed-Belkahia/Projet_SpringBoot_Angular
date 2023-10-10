@@ -1,0 +1,93 @@
+<style>
+    label {
+        font-weight: bold;
+    }
+</style>
+<app-navbar></app-navbar>
+
+<app-sidebar></app-sidebar>
+
+<div class="container-xxl position-relative bg-white d-flex p-0">
+
+
+    <div class="container-fluid">
+        <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+
+            <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                <a routerLink="/listRentalOffers" routerLinkActive="active "  class="dropdown-item"><i class="fa fa-reply"
+                        aria-hidden="true" style="width: 120px;height: 120 px;"></i>
+                    </a>
+                <div class="bg-light" style="padding: 20px;">
+
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h3>Add Rental Offer</h3>
+                    </div>
+                    <hr>
+
+
+                    <form (ngSubmit)="addRentalOffer()" #postForm="ngForm">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <label
+                                for="floatingText">adress</label>
+                                <input class="form-control" id="adress" style="height: 50px"  rows="100" 
+                                    [(ngModel)]="rentalOffer.adress" name="ContentPost"> 
+                            </div>
+   <div class="col-6">
+                                <label
+                                    for="floatingPassword">monthly rent</label>
+                                <input type="number" class="form-control" id="monthlyrent"   style="height: 50px"
+                                    rows="100"  [(ngModel)]="rentalOffer.monthlyrent" name="ContentPost"> 
+                            </div>
+
+
+                            <div class="col-6">
+                                <label
+                                    for="floatingPassword">offredate</label>
+                                <input type="date" class="form-control" id="offredate" style="height: 50px" rows="100"
+                                     [(ngModel)]="rentalOffer.offredate" name="ContentPost"> 
+                            </div>
+
+
+                            <div class="col-6">
+                                <label
+                                    for="floatingPassword">title</label>
+                                <input class="form-control" id="title" style="height: 50px" rows="100" 
+                                    [(ngModel)]="rentalOffer.title" name="ContentPost"> 
+                            </div>
+
+
+
+
+                            <div class="col-12">
+                                <label for="floatingInput">description</label>
+                                <textarea class="form-control" id="description" style="height: 50px" rows="100" 
+                                    [(ngModel)]="rentalOffer.description" name="ContentPost" id="" cols="2"
+                                    rows="2"></textarea>
+                            
+                            </div>
+<div style="margin: 20px;">
+    <input type="file" class="form-control" id="speaker" (change)="onFileSelected($event)" name="speaker">
+
+</div>
+
+                        </div>
+
+
+
+
+
+
+
+                        <button type="submit" style="width:100% ; margin-top: 10px;" class="btn btn-primary py-3 w-100 mb-4">Add Rental
+                            Offer</button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,79 @@
+<app-navbar></app-navbar>
+
+<app-sidebar></app-sidebar>
+
+<div class="container-xxl position-relative bg-white d-flex p-0">
+
+
+    <!-- Sign Up Start -->
+    <div class="container-fluid">
+        <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+
+            <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                <a routerLink="/listRentalOffers" routerLinkActive="active" class="dropdown-item"><i class="fa fa-reply"
+                        aria-hidden="true" style="width: 120px;height: 120 px;"></i></a>
+
+
+                <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
+
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h3>Update PLAN</h3>
+                    </div>
+                   <form (ngSubmit)="updateplan()" #postForm="ngForm">
+
+    <div class="form-group">
+        <label for="description">Description</label>
+        <input class="form-control" id="description" required [(ngModel)]="rentalOffer.description" name="description">
+    </div>
+
+    <div class="form-group">
+        <label for="kitchen">Kitchen</label>
+        <input class="form-control" id="kitchen" required [(ngModel)]="rentalOffer.kitchen" name="kitchen">
+    </div>
+
+    <div class="form-group">
+        <label for="livingroom">Living Room</label>
+        <input type="number" class="form-control" id="livingroom" required [(ngModel)]="rentalOffer.livingroom" name="livingroom">
+    </div>
+
+    
+
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input class="form-control" id="price" required [(ngModel)]="rentalOffer.price" name="price">
+    </div>
+
+    <div class="form-group">
+        <label for="realizationprice">Realization Price</label>
+        <input class="form-control" id="realizationprice" required [(ngModel)]="rentalOffer.realizationprice" name="realizationprice">
+    </div>
+
+    <div class="form-group">
+        <label for="room1">Room 1</label>
+        <input class="form-control" id="room1" required [(ngModel)]="rentalOffer.room1" name="room1">
+    </div>
+
+    <div class="form-group">
+        <label for="room2">Room 2</label>
+        <input class="form-control" id="room2" required [(ngModel)]="rentalOffer.room2" name="room2">
+    </div>
+
+    <div class="form-group">
+        <label for="wc">WC</label>
+        <input class="form-control" id="wc" required [(ngModel)]="rentalOffer.wc" name="wc">
+    </div>
+    <div class="form-group">
+        <label for="picture">Picture</label>
+        <input type="file" class="form-control" id="speaker" (change)="onFileSelected($event)" name="speaker">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block mt-3">Update Plan</button>
+
+</form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sign Up End -->
+</div>

@@ -1,0 +1,35 @@
+/* Styles pour le calendrier */
+#calendar {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: rgb(252, 254, 253);
+  }
+  
+  /* Styles pour les boutons du calendrier */
+  .fc button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .fc button:hover {
+    background-color: #0062cc;
+  }
+  
+  /* Styles pour les événements du calendrier */
+  .fc-event {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .fc-event:hover {
+    background-color: #218838;
+  }
+  

@@ -1,0 +1,35 @@
+<app-navbarfront></app-navbarfront>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-light text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+
+          <form class="container mt-5" (submit)="onSubmit()">
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label"><i class="fas fa-key"></i> Token:</label>
+              <div class="col-sm-10">
+                <select class="form-control" name="token" [(ngModel)]="token">
+                  <option value="tok_visa"><i class="fab fa-cc-visa"></i> Visa</option>
+                  <option value="tok_mastercard"><i class="fab fa-cc-mastercard"></i> Mastercard</option>
+                  <option value="tok_amex"><i class="fab fa-cc-amex"></i> American Express</option>
+                  <option value="tok_discover"><i class="fab fa-cc-discover"></i> Discover</option>
+                  <option value="tok_diners"><i class="fab fa-cc-diners-club"></i> Diners Club</option>
+                  <option value="tok_jcb"><i class="fab fa-cc-jcb"></i> JCB</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label"><i class="fas fa-coins"></i> Currency:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="currency" [(ngModel)]="currency" />
+              </div>
+            
+            </div>
+           
+            <button  type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit</button>
+          </form>

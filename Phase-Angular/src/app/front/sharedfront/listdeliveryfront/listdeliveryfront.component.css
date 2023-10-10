@@ -1,0 +1,32 @@
+.delivery-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .delivery-card {
+    width: 80%;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .delivery-card h5 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .delivery-card p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .delivery-card .delivery-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .delivery-card .delivery-state {
+    font-weight: bold;
+  }
+  

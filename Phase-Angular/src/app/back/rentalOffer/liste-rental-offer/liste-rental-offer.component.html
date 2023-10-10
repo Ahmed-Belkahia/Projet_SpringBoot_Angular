@@ -1,0 +1,139 @@
+<style>
+ 
+</style>
+<app-navbar></app-navbar>
+
+<app-sidebar></app-sidebar>
+<!-- Content Start -->
+<div class="content">
+
+
+  
+
+
+
+    <!-- Recent Sales Start -->
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+               
+
+                    <h3> List Of Rental Offers</h3>
+            </div>
+            
+            <div class="table-responsive">
+                <div class="col-md-4">
+                    <input class="form-control" type="text"  name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442; Search">
+                    </div>
+                    <br>
+
+                        <form [formGroup]="datePickerForm" >
+                            <div class="row col-6">
+                                <!--<div class="col-6">
+                                    <label for="">Start</label>
+                                    <input type="date" name="startdate" [(ngModel)]="contract.startdate" class="form-control">
+                                </div> -->
+                                <!-- Recent Sales Start -->
+                                <mat-form-field  class="example-form-field form-control" appearance="fill">
+                                    <mat-label  class="form-label" >Selectionner l'intervale de date</mat-label>
+                                    <mat-date-range-input  [rangePicker]="campaignOnePicker"
+                                        >
+                                        <input matStartDate formControlName="startdate" placeholder="Start date">
+                                        <input matEndDate formControlName="enddate" placeholder="End date">
+                                    </mat-date-range-input>
+                                    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                                    <mat-datepicker-toggle matIconSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+                                    <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+                                </mat-form-field>
+                                
+                    
+                            </div>
+                            <div style="text-align: left;">                 
+                                           <button style="margin-top: 20px; width: 30%; margin-bottom: 20px;" type="button" (click)="getAvailableOffers()" class="btn btn-dark">Chercher les Offres disponibles </button>
+                            </div>
+                        </form>
+                        <button (click)="filterD()" class="btn btn-success">
+                            <i class="bi bi-sort-down"></i>
+                          </button>
+                          
+                          <button (click)="filterA()" class="btn btn-info">
+                            <i class="bi bi-sort-up"></i>
+                          </button>
+                          <button routerLink="/AddRentalOffer" type="button" class="btn btn-dark ml-3" style="background-color: grey; font-weight: bold;">
+                            <i class="bi bi-plus-circle"></i>
+                          </button>
+                        <div style="text-align:right; padding-bottom: 30px;"> <button type="button" routerLink="/AddRentalOffer"
+                            routerLinkActive="active" class="btn btn-dark" style="color: white; font-weight: bold;">Add
+                            Rental Offer</button></div>
+                <table class="table" >
+                    
+                    <thead class="table-dark" style="border-radius: 20px;">
+                        <tr >
+                            <th scope="col">offreid</th>
+                            <th scope="col">adress</th>
+
+                            <th scope="col">description</th>
+
+                            <th scope="col">monthlyrent</th>
+                            <th scope="col">offredate</th>
+                            <th scope="col">picture</th>
+                            <th scope="col">title</th>
+                            <th scope="col">typerentaloffer</th>
+                            <th scope="col">Action</th>
+                            <th scope="col">Methode</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <tr *ngFor="let i of list | filter:searchText
+                        | paginate
+                            : {
+                                itemsPerPage: tableSize,
+                                currentPage: page,
+                                totalItems: count
+                              };
+                        let x = index">
+                            <td> {{ i.offreid }}</td>
+                            <td>{{i.adress}}</td>
+                            <td>{{i.description}}</td>
+                            <td>{{i.monthlyrent}}</td>
+                            <td>{{i.offredate}}</td>
+                            <td><img src="assets/images/{{ i.picture }}" width="100"></td>
+                            <td>{{i.title}}</td>
+
+                            <td>{{i.typerentaloffer}}</td>
+
+                            <td style="text-align: center;">
+                                <button (click)="deleteOffer(i.offreid)" type="button" class="btn btn-danger mr-2"> <i
+                                        class="bi bi-trash-fill"></i>
+                                </button>
+                                <button class="btn btn-primary mr-2" (click)="update(i)" style="margin-left: 5px;">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </button>
+                                <button class="btn btn-primary mr-2" (click)="detail(i)"  style="margin-left: 5px;">
+                                    <i class="bi bi-eye-fill"></i>
+                                </button>
+                            
+                            </td>
+                            <td>
+                                <button class="btn btn-success" (click)="disponile(i)">Disponibilité</button>
+                         
+                            </td>
+
+
+
+                        </tr>
+
+
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-center">
+                    <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+                    </pagination-controls>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Recent Sales End -->

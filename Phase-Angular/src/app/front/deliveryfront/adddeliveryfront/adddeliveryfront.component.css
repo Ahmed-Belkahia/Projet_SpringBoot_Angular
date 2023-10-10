@@ -1,0 +1,126 @@
+/* Styles pour le formulaire */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .form-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .form-header h2 {
+    font-size: 36px;
+    margin: 0;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .form-group input {
+    height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .form-group textarea {
+    height: 120px;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-group textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .form-group .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+  }
+  
+  .form-group select {
+    height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .form-group select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .form-group button {
+    height: 40px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-group button:hover {
+    background-color: #0069d9;
+  }
+  
+  /* Styles pour la section de confirmation */
+  .confirmation {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .confirmation h2 {
+    font-size: 36px;
+    margin: 0;
+  }
+  
+  .confirmation p {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .confirmation button {
+    height: 40px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .confirmation button:hover {
+    background-color: #0069d9;
+  }
+  

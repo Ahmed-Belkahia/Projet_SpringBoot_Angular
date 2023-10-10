@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.center {
+			width: 50%;
+			margin: auto;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+
+
+<app-navbarfront></app-navbarfront>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="center">
+<div id="profile-settings" class="tab-pane fade active show">
+  <div class="pt-3">
+      <div class="settings-form">
+          <h4 class="text-primary">Ajouter Rendez_Vous</h4>
+        
+          <form #sellContractForm="ngForm" (ngSubmit)="Demanderrendezvous()">
+    
+            <div class="form-group">
+              <label for="price">Nom</label>
+              <input type="text" class="form-control" id="price" name="nom" [(ngModel)]="rendezvous.nom" >
+            </div>
+            <div class="form-group">
+                <label for="price">Prénom</label>
+                <input type="text" class="form-control" id="price" name="prenom" [(ngModel)]="rendezvous.prenom" >
+              </div>
+            <div class="form-group">
+              <label for="selldate">Date Rendez_Vous</label>
+              <input type="date" class="form-control" id="selldate" name="rendezvousdate" [(ngModel)]="rendezvous.rendezvousdate" >
+            </div>
+            <div class="form-group">
+              <label for="city">Tel</label>
+              <input type="number" class="form-control" id="city" name="tel" [(ngModel)]="rendezvous.tel" >
+            </div>
+            <div class="form-group">
+                <label for="price">E-mail</label>
+                <input type="text" class="form-control" id="price" name="email" [(ngModel)]="rendezvous.email" >
+              </div>
+            
+            <button   type="submit" class="btn btn-primary"   >Submit</button>
+          </form>
+      </div>
+  </div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<app-footer></app-footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+
+<app-sidebar></app-sidebar>
+<!-- Content Start -->
+<div class="content">
+
+
+
+
+
+
+    <!-- Recent Sales Start -->
+    <div class="container" style="margin-top: 20px;">
+        <div class="bg-light text-center rounded p-4">
+            <div >
+                <h3 style="text-align: center;"> Add Rental Contrat</h3>
+            </div>
+            <form style="width: 50%; margin-left: auto; margin-right: auto;">
+                <div class="row " >
+                    <div class="col-6">
+                        <label for="">Start</label>
+                        <input type="date" name="startdate" (change)="validationDate($event)"  [(ngModel)]="contract.startdate" required  class="form-control">
+                        
+                    </div>
+
+
+
+                    <div class="col-6">
+                        <label for="">Nombre de month</label>
+                        <input type="number" name="nbmonth" (change)="validationnbMonth($event)" [(ngModel)]="contract.nbmonth" #nbmonth="ngModel"  required class="form-control">
+                        <div *ngIf="nbmonth.invalid && (nbmonth.dirty || nbmonth.touched)">
+
+                            <div *ngIf="nbmonth.errors?.['required']">
+                                <small class="p-invalid" style="color: red;"> ce champs est obligatoire</small>
+                            </div>
+
+                           
+
+
+
+                        </div>
+                        <div *ngIf="nbmonth.value<1">
+                            <small class="p-invalid" style="color: red;">Vous devez louer au moin 1 mois</small>
+                        </div>
+                    </div>
+
+                </div>
+                <button style="margin-top: 20px; width: 100%;" (click)="addRentalContrat()" type="submit"
+                    class="btn btn-primary"  >Add</button>
+            </form>
+        </div>
+    </div>
+</div>

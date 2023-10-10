@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+
+<app-sidebar></app-sidebar>
+
+<!-- Content Start -->
+<div class="content">
+
+
+
+    
+
+
+    <!-- Recent Sales Start -->
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Date de relocalisation</th>
+          <th>Localisation de départ</th>
+          <th>Localisation d'arrivée</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let relocation of listrelocation">
+          <td>{{ relocation.relocationdate | date }}</td>
+          <td>{{ relocation.locationdep }}</td>
+          <td>{{ relocation.locationarr }}</td>
+          <td>
+            <button class="btn btn-sm btn-primary" (click)="update(relocation.relocationid)">Editer</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteProduct(relocation.relocationid)">Supprimer</button>
+            <button class="btn btn-sm btn-danger" (click)="openMap(relocation.locationdep , relocation.locationarr)">map</button>
+            <button class="btn btn-primary" (click)="detail(relocation)">
+                <i class="bi bi-eye-fill"></i>
+              </button>
+            
+          </td>
+        </tr>
+      </tbody>
+    

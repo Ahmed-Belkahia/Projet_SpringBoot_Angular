@@ -1,0 +1,87 @@
+
+<app-navbarfront></app-navbarfront>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="tr-single-body">
+    <div class="tr-single-header">
+        <h4><i class="far fa-address-card pr-2"></i>Relocation Information</h4>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <label>Relocation Date</label>
+            <input type="date" class="form-control" [(ngModel)]="relocation.relocationdate" name="relocationdate">
+        </div>
+        <div class="col-sm-10">
+            <label>Localisation de depart</label>
+            <div class="col-sm-10">
+                <select class="form-control" name="token" [(ngModel)]="relocation.locationdep">
+                  <option value="Tunis"><i class="fab fa-cc-visa"></i> Tunis</option>
+                  <option value="Ben Arous"><i class="fab fa-cc-mastercard"></i> Ben Arous</option>
+                  <option value="Manouba"><i class="fab fa-cc-amex"></i> Manouba</option>
+                  <option value="Ariana"><i class="fab fa-cc-discover"></i> Ariana</option>
+                  <option value="Le Kef"><i class="fab fa-cc-diners-club"></i> Kef</option>
+                  <option value="Gassrine"><i class="fab fa-cc-jcb"></i> Gassrin</option>
+                  <option value="Mahdia"><i class="fab fa-cc-visa"></i> Mahdia</option>
+                  <option value="Monastir"><i class="fab fa-cc-mastercard"></i> Monastir</option>
+                  <option value="Sousse"><i class="fab fa-cc-amex"></i> Sousse</option>
+                  <option value="Sfax"><i class="fab fa-cc-discover"></i> Sfax</option>
+                  <option value="kairaoun"><i class="fab fa-cc-diners-club"></i> kairaoun</option>
+                  <option value="Beja"><i class="fab fa-cc-jcb"></i> Beja</option>
+                  <option value="Zaghoun"><i class="fab fa-cc-visa"></i> Zaghoun</option>
+                  <option value="Sidi Bouzid"><i class="fab fa-cc-mastercard"></i> Sidi Bouzid</option>
+                  <option value="Gafsa"><i class="fab fa-cc-amex"></i> Gafsa</option>
+                  <option value="Jandouba"><i class="fab fa-cc-discover"></i> Jandouba</option>
+                  <option value="Gabes"><i class="fab fa-cc-diners-club"></i> Gabes</option>
+                  <option value="Mednin"><i class="fab fa-cc-jcb"></i> Mednin</option>
+                  <option value="Touzer"><i class="fab fa-cc-visa"></i> Touzer</option>
+                  <option value="Benzart"><i class="fab fa-cc-mastercard"></i> Benzart</option>
+                  <option value="Neubel"><i class="fab fa-cc-amex"></i> Neubel</option>
+                  <option value="Tataouin"><i class="fab fa-cc-discover"></i> Tataouin</option>
+                  <option value="Seliana"><i class="fab fa-cc-diners-club"></i> Seliana</option>
+                  <option value="Kebili"><i class="fab fa-cc-jcb"></i> Kebili</option>
+                </select>
+              </div>        </div>
+              <div class="col-sm-10">
+                <label>Localisation d'arrivée</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="token" [(ngModel)]="relocation.locationarr">
+                      <option value="Tunis"><i class="fab fa-cc-visa"></i> Tunis</option>
+                      <option value="Ben Arous"><i class="fab fa-cc-mastercard"></i> Ben Arous</option>
+                      <option value="Manouba"><i class="fab fa-cc-amex"></i> Manouba</option>
+                      <option value="Ariana"><i class="fab fa-cc-discover"></i> Ariana</option>
+                      <option value="Le Kef"><i class="fab fa-cc-diners-club"></i> Kef</option>
+                      <option value="Gassrine"><i class="fab fa-cc-jcb"></i> Gassrin</option>
+                      <option value="Mahdia"><i class="fab fa-cc-visa"></i> Mahdia</option>
+                      <option value="Monastir"><i class="fab fa-cc-mastercard"></i> Monastir</option>
+                      <option value="Sousse"><i class="fab fa-cc-amex"></i> Sousse</option>
+                      <option value="Sfax"><i class="fab fa-cc-discover"></i> Sfax</option>
+                      <option value="kairaoun"><i class="fab fa-cc-diners-club"></i> kairaoun</option>
+                      <option value="Beja"><i class="fab fa-cc-jcb"></i> Beja</option>
+                      <option value="Zaghoun"><i class="fab fa-cc-visa"></i> Zaghoun</option>
+                      <option value="Sidi Bouzid"><i class="fab fa-cc-mastercard"></i> Sidi Bouzid</option>
+                      <option value="Gafsa"><i class="fab fa-cc-amex"></i> Gafsa</option>
+                      <option value="Jandouba"><i class="fab fa-cc-discover"></i> Jandouba</option>
+                      <option value="Gabes"><i class="fab fa-cc-diners-club"></i> Gabes</option>
+                      <option value="Mednin"><i class="fab fa-cc-jcb"></i> Mednin</option>
+                      <option value="Touzer"><i class="fab fa-cc-visa"></i> Touzer</option>
+                      <option value="Benzart"><i class="fab fa-cc-mastercard"></i> Benzart</option>
+                      <option value="Neubel"><i class="fab fa-cc-amex"></i> Neubel</option>
+                      <option value="Tataouin"><i class="fab fa-cc-discover"></i> Tataouin</option>
+                      <option value="Seliana"><i class="fab fa-cc-diners-club"></i> Seliana</option>
+                      <option value="Kebili"><i class="fab fa-cc-jcb"></i> Kebili</option>
+                    </select>
+                  </div>   
+             </div>
+             <div class="col-sm-6">
+
+             <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit</button>
+             </div>
+    </div>
+    </form>
+</div>
+<app-footer></app-footer>

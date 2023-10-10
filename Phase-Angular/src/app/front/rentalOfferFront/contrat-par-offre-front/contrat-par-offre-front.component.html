@@ -1,0 +1,84 @@
+<style>
+    h6 {
+      text-align: center;
+  
+    }
+    .card{
+      display: block;
+      justify-content: center;
+    }
+  </style>
+  <app-navbarfront></app-navbarfront>
+
+  
+  <div class="content">
+
+<br>   
+<br>   
+<br>   
+<br>   
+<br>   
+<br>   
+
+   
+       <!-- Recent Sales Start -->
+       <div class="container-fluid pt-4 px-4">
+           <div class="bg-light text-center rounded p-4">
+               <div class="d-flex align-items-center justify-content-between mb-4">
+                   <div class="search-hero">
+                       <input class="form-control" type="text" name="search" autocomplete="off"
+                           placeholder="&#61442;  Start searching for a hero by id or name or country">
+                   </div>
+   
+                   <h3 > List Of Rental Contrat</h3>
+               </div>
+               <div style="text-align:right; padding-bottom: 30px;"> <button type="button" (click)="goToAdd()" class="btn btn-dark" style="color: white; font-weight: bold;">
+                   Add Rental Contrat</button>
+               </div>
+               <div style="padding: 50px;">
+                 <div *ngIf="show">
+                   <div class="card" id="pdff" #pdf>
+                     <h4 style="font-size: 20px; font-weight: bold; text-align: center;">Contart</h4>
+                     <h6>contrat start at : {{contratDetail?.startdate}}</h6>
+                     <h6>contrat end at : {{contratDetail?.enddate}}</h6>
+                     <h6>number of month : {{contratDetail?.nbmonth}}</h6>
+                     <h6>price : {{contratDetail?.price}}</h6>
+                     <h6>for mr/mme : .....................</h6>
+                   </div>
+                   <div>
+                     <button style="margin-top: 10px; margin-bottom: 10px;" (click)="loadPdfff()" class="btn btn-success">Download</button>
+                   </div>
+                 </div>
+   
+                   <table class="table">
+                       <thead class="table-dark">
+                         <tr>
+                           <th scope="col">id</th>
+                           <th scope="col">Price</th>
+                           <th scope="col">Start</th>
+                           <th scope="col">End</th>
+                           <th scope="col">Action</th>
+                         </tr>
+                       </thead>
+                       <tbody *ngFor="let item of contrats">
+                         <tr>
+                           <td>{{item.contractid}}</td>
+                           <td>{{item.price}}</td>
+                           <td>{{item.startdate}}</td>
+                           <td>{{item.enddate}}</td>
+                           <td> <button class="btn btn-primary" style="margin-left: 5px;">
+                               <i class="bi bi-download" (click)="generatePDF(item)"></i> </button></td>
+                         </tr>
+                       
+                       </tbody>
+                     </table>
+               </div>
+           </div>
+       </div>
+   </div>
+   <br>   
+   <br>   
+   <br>   
+<br>   
+
+<app-footer></app-footer>

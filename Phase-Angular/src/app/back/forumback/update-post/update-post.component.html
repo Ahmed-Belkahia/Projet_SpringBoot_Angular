@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+
+<app-sidebar></app-sidebar>
+<div class="container-xxl position-relative bg-white d-flex p-0">
+
+
+    <!-- Sign Up Start -->
+    <div class="container-fluid">
+        <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                <a routerLink="/listpost" routerLinkActive="active" class="dropdown-item"><i class="fa fa-reply" aria-hidden="true" style="width: 120px;height: 120 px;"></i></a>
+                <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
+                    <div class="d-flex align-items-center justify-content-between mb-3" >
+                        <h3 >update Post</h3>
+                    </div>
+                    <form (ngSubmit)="updatepost()" #postForm="ngForm">
+
+                   
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="title" style="height: 50px" rows="100" required [(ngModel)]="Post.title"
+                                name="ContentPost">                        <label for="floatingInput">title</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="file" class="form-control" id="speaker" (change)="onFileSelected($event)" name="speaker">
+                                                    <label for="floatingPassword">image</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <textarea class="form-control" id="postContent" style="height: 400px; width:200%;" required [(ngModel)]="Post.postContent" name="ContentPost"></textarea>
+                        <label for="floatingPassword">postContent</label>
+                    </div>
+                   
+                    <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Update Post</button>
+                </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sign Up End -->
+</div>

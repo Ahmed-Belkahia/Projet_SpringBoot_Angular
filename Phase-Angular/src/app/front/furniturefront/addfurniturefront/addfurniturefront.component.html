@@ -1,0 +1,53 @@
+
+<app-navbarfront></app-navbarfront>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="my-address">
+    <form (ngSubmit)="save()" enctype="multipart/form-data" method="POST">
+        <div class="row">
+            <div class="col-lg-12 ">
+                <div class="form-group name">
+                    <label>Furniture Weight</label>
+                    <input type="number" [(ngModel)]="furniture.furnitureweight" name="furnitureweight" required>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group email">
+                    <label>Price</label>
+                    <input type="number" [(ngModel)]="furniture.price" name="price" required>
+                </div>
+            </div>
+            <div class="col-lg-12 ">
+                <div class="form-group subject">
+                    <label>Surface</label>
+                    <input type="number" [(ngModel)]="furniture.surface" name="surface" required>
+                </div>
+            </div>
+         
+        </div>
+    
+<div class="single-add-property">
+    <h3>property Media</h3>
+    <div class="property-form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <form  class="dropzone dz-clickable"><div class="dz-default dz-message"><div class="file-upload">
+                    <input type="file" id="file-upload" name="file-upload" (change)="onFileSelected($event)"/>
+                    <label for="file-upload"><i class="fa fa-cloud-upload"></i> Click here or drop files to upload</label>
+                  </div>
+                  </div></form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-12">
+    <div class="send-btn mt-2">
+        <button type="submit" class="btn btn-common">Send Changes</button>
+    </div>
+</div>
+</form>
+</div>
+<app-footer></app-footer>

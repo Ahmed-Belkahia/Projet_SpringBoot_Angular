@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.center {
+			width: 50%;
+			margin: auto;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+
+
+<app-navbar></app-navbar>
+<div class="center">
+<div id="profile-settings" class="tab-pane fade active show">
+  <div class="pt-3">
+      <div class="settings-form">
+          <h4 class="text-primary">Update User</h4>
+          <form>
+              <div  class="form-row">
+                      <label>Last Name</label>
+                      <input type="text" id="lastname" name="lastname" placeholder="Last Name" class="form-control" [(ngModel)]="user.lastname"  readonly>
+
+              </div>
+              <div class="form-row">
+              <div class="form-group col-md-6" style="display: inline-block; width: 50%; padding-right: 30px;" >
+                <label>Email</label>
+                <input type="email" name="email" id="email" placeholder="azerty@gmail.com" class="form-control" [(ngModel)]="user.email"  readonly>
+            </div>
+          </div>
+
+          <div class="form-row">
+              <div class="form-group col-md-6" id="phone"style="display: inline-block; width: 50%; padding-right: 30px;">
+                  <label>Phone</label>
+                  <input type="text" name="phone" placeholder="+216 *******" class="form-control" [(ngModel)]="user.phone"  readonly>
+              </div>
+
+                  <div class="form-group col-md-6" id="address" style="display: inline-block; width: 50%;">
+                      <label>Address</label>
+                      <input type="text" name="address" class="form-control" [(ngModel)]="user.address"  readonly>
+                  </div>
+                  </div>
+                  <div class="form-row" >
+                  <div class="form-group col-md-6" id="cin"style="display: inline-block; width: 50%; padding-right: 30px;">
+                    <label>Cin</label>
+                    <input type="text" name="cin" id="cin" class="form-control" [(ngModel)]="user.cin"  readonly>
+                </div>
+                <div class="form-group col-md-6" style="display: inline-block; width: 50%;">
+                  <label>Profile Picture</label>
+                  <input type="text" name="profilepicture" id="profilepicture"class="form-control" [(ngModel)]="user.profilepicture"  readonly>
+              </div>
+              <div class="form-group col-md-6">
+                <label>Company Name</label>
+                <input type="text" name="companyname" id="companyname" class="form-control" [(ngModel)]="user.companyname"  readonly>
+            </div>
+            <p>Roles:</p>
+              <select class="form-control" name="roles" id="roles" [(ngModel)]="user.roles" required>
+                <option value="ADMIN">ADMIN</option>
+                <option value="CLIENT">CLIENT</option>
+                <option value="LOCATOR">LOCATOR</option>
+                <option value="SELLER">SELLER</option>
+              </select>
+              </div>
+
+            <br>
+              <div class="form-group">
+              </div>
+              <button class="btn btn-primary" type="submit" (click)="onUpdateUser()">Add</button>
+          </form>
+      </div>
+  </div>
+</div>
+</div>
+<app-sidebar></app-sidebar>
+</body>
+</html>

@@ -1,0 +1,67 @@
+
+
+<app-navbarfront></app-navbarfront>
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+
+<!-- Content Start -->
+<div class="container">
+  <br>  
+  <h1 class="mt-3 mb-3">Rental Offers</h1>
+  <form [formGroup]="datePickerForm" style="margin-top: 30px;">
+    <div class="row col-6">
+        <!--<div class="col-6">
+            <label for="">Start</label>
+            <input type="date" name="startdate" [(ngModel)]="contract.startdate" class="form-control">
+        </div> -->
+        <!-- Recent Sales Start -->
+        <mat-form-field  class="example-form-field form-control" appearance="fill">
+            <mat-label  class="form-label" >Select date range
+            </mat-label>
+            <mat-date-range-input  [rangePicker]="campaignOnePicker"
+                >
+                <input matStartDate formControlName="startdate" placeholder="Start date">
+                <input matEndDate formControlName="enddate" placeholder="End date">
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+            <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+        </mat-form-field>
+        
+
+    </div>
+    <div style="text-align: left;">                 
+                   <button style="margin-top: 20px; width: 30%; margin-bottom: 20px;" type="button" (click)="getAvailableOffers()" class="btn btn-dark">Search For Available Offers </button>
+    </div>
+</form>
+  <div class="d-flex justify-content-end">
+   
+  </div>
+ 
+
+  <div class="row mt-4">
+    <div class="col-md-3" *ngFor="let i of list | filter:searchText">
+      <div class="card">
+        <!-- <img src="assets/images/{{ i.picture }}" class="card-img-top" alt="{{ i.title }}"class="my-image"> -->
+        <img style="width: 290px; height: 200px;" src="assets/images/{{ i.picture }}" alt="Image Size 100x100">
+        <div class="card-body">
+          <h5 class="card-title">{{ i.title }}</h5>
+          <p class="card-text">{{ i.description }}</p>
+         
+          
+          <div class="d-flex justify-content-end mt-3">
+            <button class="btn btn-dark" (click)="detail(i)">
+              <i class="bi bi-eye-fill"></i> Choose
+            </button>
+            <button class="btn btn-success" (click)="disponile(i)">Availability</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

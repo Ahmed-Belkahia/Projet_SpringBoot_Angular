@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.center {
+			width: 50%;
+			margin: auto;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+
+
+<app-navbarfront></app-navbarfront>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="center">
+<div id="profile-settings" class="tab-pane fade active show">
+  <div class="pt-3">
+      <div class="settings-form">
+          <h4 class="text-primary">Add Contract</h4>
+        
+          <form #sellContractForm="ngForm" (ngSubmit)="addContrat()">
+    
+           
+            <div class="form-group">
+              <label for="selldate">Sell Date</label>
+              <input type="date" class="form-control" id="selldate" name="selldate" [(ngModel)]="contract.selldate" >
+            </div>
+            
+            
+            <button    type="submit" class="btn btn-primary"   >Submit</button>
+          </form>
+      </div>
+  </div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<app-footer></app-footer>
+</body>
+</html>

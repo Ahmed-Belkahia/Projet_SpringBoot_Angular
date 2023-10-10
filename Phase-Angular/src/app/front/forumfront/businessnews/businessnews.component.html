@@ -1,0 +1,80 @@
+
+  
+    <!-- Rest of your code -->
+    <app-navbarfront></app-navbarfront>
+<br>
+<br>
+<br>
+<br>
+
+<body>
+    
+    
+
+
+
+
+ <!-- Header Container / End -->
+
+ <section class="headings" style="background-image: url('bg-counter2.jpg');">
+    <div class="text-heading text-center">
+      <div class="container">
+        <h1>Blog</h1>
+        <h2><a routerLink="/posts" routerLinkActive="active" style="color: rgb(255, 255, 255); text-decoration: none;">POSTS</a>&nbsp;/<a routerLink="/news" routerLinkActive="active" style="color: rgb(255, 0, 0); text-decoration: none;">NEWS</a>&nbsp;</h2>
+      </div>
+    </div>
+  </section>
+<!-- END SECTION HEADINGS -->
+
+
+<div class="container-fluid mt-5">
+    
+
+<!-- <div style="display: flex; justify-content: space-between;">
+    <h4><a href="#">Real Estate Related News</a></h4>
+    <h4><a href="#">Real Estate Related News</a></h4>
+    <h4><a href="#">Real Estate Related News</a></h4>
+</div> -->
+
+<div class="news-container">
+    <button><a routerLink="/news" routerLinkActive="active"><h4>Real Estate Related News</h4></a></button>
+    <button><a routerLink="/news2" routerLinkActive="active"><h4>Architecture House News</h4></a></button>
+    <button><a routerLink="/news1" routerLinkActive="active"><h4>Rental prices News</h4></a></button>
+  </div>
+      <form class="form-header" onsubmit="return false;" method="GET">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" name="search" placeholder="Search for Posts ..." />
+       
+          <div class="search-hero">
+                 
+                
+              </div>
+      </form>
+    <div class="row">
+        <div *ngFor="let d of businessnewsDisplay| filter:searchText | paginate  : {
+                itemsPerPage: tableSize,
+                currentPage: page,
+                totalItems: count
+              };
+              let x = index" class="col-lg-3 mt-3 mb-3">
+              
+            <div class="box">
+                <img style="width: 450px; height: 300px;" class="img-responsive" src="{{d.urlToImage}}" width="100%">
+                <h5 class="mt-2 mb-2">{{d.title}}</h5>
+                <a href="{{d.url}}" target="_blank" class="btn btn-dark btn-sm mt-2">Read more</a>
+            </div>
+        </div>
+    </div>
+</div>
+<nav aria-label="..." class="d-flex justify-content-center">
+       
+    <div class="d-flex justify-content-center">
+      <pagination-controls
+        previousLabel="Prev"
+        nextLabel="Next"
+        (pageChange)="onTableDataChange($event)"
+      >
+      </pagination-controls>
+    </div>
+</nav>
+<br>
+<app-footer></app-footer>

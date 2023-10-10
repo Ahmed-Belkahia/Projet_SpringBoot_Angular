@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Facture de paiement</title>
+    <style>
+        /* Styles pour la page */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12pt;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f7f7f7;
+        }
+        h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            margin: 0;
+            padding: 30px 0 20px;
+            text-align: center;
+            background-color: #2d4059;
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .logo {
+            width: 100px;
+        }
+        .info {
+            font-size: 14pt;
+            line-height: 1.6;
+        }
+        .info span {
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #f7f7f7;
+            font-weight: bold;
+        }
+        .total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .total span {
+            font-weight: bold;
+            font-size: 16pt;
+        }
+        .footer {
+            font-size: 10pt;
+            text-align: center;
+            margin-top: 60px;
+            color: #999;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img class="logo" src="..\main\resources\templates\téléchargement.png" alt="Logo de l'entreprise"/>
+            <div class="info">
+                <div><span>Nom de l'entreprise:</span> TechMaster</div>
+                <div><span>Adresse:</span> Esprit, 18, rue de l'Usine , Tunisia</div>
+                <div><span>Téléphone:</span> +216 54 480 469</div>
+                <div><span>Email:</span> relocationrelocation14@gmail.com</div>
+            </div>
+        </div>
+        <h1>Facture de paiement</h1>
+    <table>
+        <tr>
+            <th>Invoice ID</th>
+            <td>${facture.id}</td>
+        </tr>
+        <tr>
+            <th>Currency</th>
+            <td>${facture.currency}</td>
+        </tr>
+        <tr>
+            <th>Total amount</th>
+            <td>${facture.amount}</td>
+        </tr>
+
+        <tr>
+            <th>Card number</th>
+            <td>******** ${facture.cardNumber}</td>
+        </tr>
+        <tr>
+            <th>Payment date</th>
+            <td>${facture.datepaiement}</td>
+        </tr>
+        <tr>
+            <th>CVC</th>
+            <td>${facture.cvc}</td>
+        </tr>
+        <tr>
+            <th>name of the card holder</th>
+            <td>${facture.cardholderName}</td>
+        </tr>
+        </table>
+        <div class="total">
+            <span>Total amount paye :</span>
+            <span>${facture.amount} ${facture.currency}</span>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Thank you for your payment!</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+
+<app-sidebar></app-sidebar>
+
+<!-- Content Start -->
+<div class="content">
+
+
+
+    
+
+
+    <!-- Recent Sales Start -->
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4"><div class="tt">
+<form (ngSubmit)="onSubmit()" enctype="multipart/form-data" method="POST">
+  <label>
+    Furniture Weight:
+    <input type="number" [(ngModel)]="furniture.furnitureweight" name="furnitureweight" required>
+  </label>
+
+  <label>
+    Price:
+    <input type="number" [(ngModel)]="furniture.price" name="price" required>
+  </label>
+
+  <label>
+    Surface:
+    <input type="number" [(ngModel)]="furniture.surface" name="surface" required>
+  </label>
+
+  <label>
+    Picture:
+    <input type="file" class="form-control" id="speaker" (change)="onImageSelected($event)" name="speaker">
+</label>
+
+  <button type="submit">Create Furniture</button>
+</form>
+</div>
+            </div>
+        </div></div>

@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+
+<app-sidebar></app-sidebar>
+<!-- Content Start -->
+<div class="content">
+
+    <!-- Recent Sales Start -->
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light text-center rounded p-4">
+        
+            
+            <div class="table-responsive">
+            
+                <table class="table" >
+                    <thead class="table-dark" style="border-radius: 20px;">
+                        <tr>
+                            <th>ID</th>
+                            <th>Détail du service</th>
+                            <th>Numéro de suivi</th>
+                            <th>Prix total</th>
+                            <th>État</th>
+                            <th>Actions</th>
+                          </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <tr *ngFor="let delivery of listdelivery | filter:searchText
+                        | paginate
+                            : {
+                                itemsPerPage: tableSize,
+                                currentPage: page,
+                                totalItems: count
+                              };
+                        let x = index">
+                        <td>{{ delivery.deliveryid }}</td>
+                        <td>{{ delivery.servicedetail }}</td>
+                        <td>{{ delivery.track }}</td>
+                        <td>{{ delivery.totaleprice }}</td>
+                        <td>{{ delivery.state }}</td>
+                            <td style="text-align: center;">
+                                <button  type="button" (click)="deleteDelivery(delivery.deliveryid)" class="btn btn-danger"> <i
+                                        class="bi bi-trash-fill"></i>
+                                </button> 
+                                <button  type="button" (click)="update(delivery.deliveryid)" class="btn btn-danger"> <i
+                                    class="bi bi-trash-fill"></i>
+                            </button> 
+                                
+                            </td>
+                    
+
+
+
+                        </tr>
+
+
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-center">
+                    <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+                    </pagination-controls>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Recent Sales End -->
+</div>

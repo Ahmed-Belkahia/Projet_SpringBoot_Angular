@@ -1,0 +1,8 @@
+.custom-alert {
+    font-size: 1rem;
+    color: white;
+    background-color: #dc3545;
+    padding: 0.5rem 1rem;
+    border: 1px solid #dc3545;
+    border-radius: 0.25rem;
+  }

@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+<app-sidebar></app-sidebar>
+
+<!-- Content Start -->
+<div class="content">
+
+
+
+    
+
+
+    <!-- Recent Sales Start -->
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <form (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                      <label>Date de relocalisation</label>
+                      <input type="date" class="form-control" [(ngModel)]="relocation.relocationdate" name="relocationdate">
+                    </div>
+                    <div class="form-group">
+                      <label>Localisation de départ</label>
+                      <input type="text" class="form-control" [(ngModel)]="relocation.locationdep" name="locationdep">
+                    </div>
+                    <div class="form-group">
+                      <label>Localisation d'arrivée</label>
+                      <input type="text" class="form-control" [(ngModel)]="relocation.locationarr" name="locationarr">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+                  </form>
+                </div>
+                      </div></div></div>

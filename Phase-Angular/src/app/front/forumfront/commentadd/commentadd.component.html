@@ -1,0 +1,23 @@
+
+
+   
+           
+               
+                <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
+                    <div class="d-flex align-items-center justify-content-between mb-3" >
+                        <h3 >Add Comment</h3>
+                    </div>
+                    <form (ngSubmit)="addPlanOffer()" #postForm="ngForm">
+
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="Comment" style="height: 100px" rows="100" required [(ngModel)]="Comment.commentContent"
+                                name="ContentPost">                      <label for="floatingText">Comment</label>
+                    </div>
+                    
+
+                    <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Add Comment</button>
+                </form>
+
+                </div>
+           
+      

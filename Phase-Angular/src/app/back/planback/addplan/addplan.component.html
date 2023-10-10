@@ -1,0 +1,104 @@
+<app-navbar></app-navbar>
+
+<app-sidebar></app-sidebar>
+<div class="container-xxl position-relative bg-white d-flex p-0">
+
+
+    <!-- Sign Up Start -->
+    <div class="container-fluid">
+        <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                <a routerLink="/listOffers" routerLinkActive="active" class="dropdown-item"><i class="fa fa-reply" aria-hidden="true" style="width: 120px;height: 120 px;"></i></a>
+                <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
+                    <div class="d-flex align-items-center justify-content-between mb-3" >
+                        <h3 >Add PLAN</h3>
+                    </div>
+                    <form (submit)="addPlanOffer()" #postForm="ngForm" class="row g-3">
+                        
+                      <div class="col-md-6" [ngClass]="{'has-danger': kitchen.invalid && kitchen.touched }">
+                        <label for="kitchen" class="form-label">Cuisine</label>
+                        <input type="number" class="form-control" id="kitchen" [(ngModel)]="Offer.kitchen" name="ContentPost" required #kitchen="ngModel">
+                        <div class="form-control-feedback" *ngIf="kitchen.invalid && kitchen.touched">
+                          La cuisine est obligatoire.
+                        </div>
+                      </div>
+                      
+                      
+                      <div class="col-md-6" [ngClass]="{'has-danger': livingroom.invalid && livingroom.touched}">
+                        <label for="livingroom" class="form-label">Salon</label>
+                        <input type="number" class="form-control" id="livingroom" [(ngModel)]="Offer.livingroom" name="livingroom" required #livingroom="ngModel">
+                        <div class="form-control-feedback" *ngIf="livingroom.invalid && livingroom.touched">
+                          Ce champ est obligatoire.
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-6" [ngClass]="{'has-danger': price.invalid && price.touched }">
+                        <label for="price" class="form-label">Prix</label>
+                        <input type="number" class="form-control" id="price" [(ngModel)]="Offer.price" name="ContentPost" required #price="ngModel">
+                        <div class="form-control-feedback" *ngIf="price.invalid && price.touched">
+                          Le prix est obligatoire.
+                        </div>
+                      </div>
+                      <div class="col-md-6" [ngClass]="{'has-danger': realizationprice.invalid && realizationprice.touched }">
+                        <label for="realizationprice" class="form-label">Prix de réalisation</label>
+                        <input type="number" class="form-control" id="realizationprice" [(ngModel)]="Offer.realizationprice" name="ContentPost" required #realizationprice="ngModel">
+                        <div class="form-control-feedback" *ngIf="realizationprice.invalid && realizationprice.touched">
+                          Le prix de réalisation est obligatoire.
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-6" [ngClass]="{'has-danger': room1.invalid && room1.touched }">
+                        <label for="room1" class="form-label">Chambre 1</label>
+                        <input type="number" class="form-control" id="room1" [(ngModel)]="Offer.room1" name="ContentPost" required #room1="ngModel">
+                        <div class="form-control-feedback" *ngIf="room1.invalid && room1.touched">
+                          Le champ Chambre 1 est obligatoire.
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-6" [ngClass]="{'has-danger': room1.invalid && room1.touched }">
+                        <label for="room1" class="form-label">Chambre 1</label>
+                        <input type="number" class="form-control" id="room1" [(ngModel)]="Offer.room1" name="ContentPost" required #room1="ngModel">
+                        <div class="form-control-feedback" *ngIf="room1.invalid && room1.touched">
+                          Le champ Chambre 1 est obligatoire.
+                        </div>
+                      </div>
+                      <div class="col-md-6" [ngClass]="{'has-danger': title.invalid && title.touched }">
+                        <label for="title" class="form-label">Titre</label>
+                        <input type="text" class="form-control" id="title" [(ngModel)]="Offer.title" name="ContentPost" required #title="ngModel">
+                        <div class="form-control-feedback" *ngIf="title.invalid && title.touched">
+                          Le titre est obligatoire.
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-6" [ngClass]="{'has-danger': wc.invalid && wc.touched }">
+                        <label for="wc" class="form-label">Toilettes</label>
+                        <input type="number" class="form-control" id="wc" [(ngModel)]="Offer.wc" name="ContentPost" required #wc="ngModel">
+                        <div class="form-control-feedback" *ngIf="wc.invalid && wc.touched">
+                          Le nombre de toilettes est obligatoire.
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-12" [ngClass]="{'has-danger': description.invalid && description.touched }">
+                        <label for="description" class="form-label">Description</label>
+                        <input class="form-control" id="description" [(ngModel)]="Offer.description" name="ContentPost"
+                               required minlength="10" #description="ngModel">
+                        <div class="form-control-feedback" *ngIf="description.invalid && description.touched">
+                          La description est obligatoire et doit avoir au moins 10 caractères.
+                        </div>
+                      </div>
+                      
+                        <div class="col-md-12">
+                          <label for="speaker" class="form-label">Organisateur</label>
+                          <input type="file" class="form-control" id="speaker" (change)="onFileSelected($event)" name="speaker">
+                        </div>
+                        <div class="col-12">
+                          <button type="submit" class="btn btn-primary w-100 mt-3">Ajouter PLAN</button>
+                        </div>
+                      </form>
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sign Up End -->
+</div>

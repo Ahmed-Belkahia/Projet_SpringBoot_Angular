@@ -1,0 +1,96 @@
+<style>
+    h6 {
+      text-align: center;
+  
+    }
+    .card{
+      display: block;
+      justify-content: center;
+    }
+  </style>
+  
+  <app-navbar></app-navbar>
+  
+  <app-sidebar></app-sidebar>
+  <!-- Content Start -->
+  <div class="content">
+  
+  
+  
+
+    <div class="container-fluid pt-4 px-4">
+      <div class="row g-4">
+          <div class="col-sm-6 col-xl-3">
+              <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                  <i class="fa fa-chart-line fa-3x text-primary"></i>
+                  <div class="ms-3">
+                      <p class="mb-2">Revenue</p>
+                      <h6 class="mb-0">${{revenu}}</h6>
+                  </div>
+              </div>
+          </div>
+        
+      </div>
+  </div>
+
+  
+  
+      <!-- Recent Sales Start -->
+      <div class="container-fluid pt-4 px-4">
+          <div class="bg-light text-center rounded p-4">
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                  <div class="search-hero">
+                      <input class="form-control" type="text" name="search" autocomplete="off"
+                          placeholder="&#61442;  Start searching for a hero by id or name or country">
+                  </div>
+  
+                  <h3 > List Of Plan Contrat</h3>
+              </div>
+              
+             <div style="text-align:right; padding-bottom: 30px;"> <button type="button" (click)="goToAdd()" class="btn btn-dark" style="color: white; font-weight: bold;">
+                  Add Plan Contrat</button>
+                 </div>
+                 
+              <div style="padding: 50px;">
+                <div *ngIf="show">
+                  <div class="card" id="pdff" #pdf>
+                    <h4 style="font-size: 20px; font-weight: bold; text-align: center;">Contart</h4>
+
+                    <h6>contrat date : {{contratDetail?.contractDate}}</h6>
+                    <h6>price : {{contratDetail?.price}}</h6>
+                    <h6>statut : {{contratDetail?.statut}}</h6>
+
+                    
+                    <h6>for mr/mme : .....................</h6>
+                  </div>
+                  <div>
+                    <button style="margin-top: 10px; margin-bottom: 10px;" (click)="loadPdfff()" class="btn btn-success">Download</button>
+                  </div>
+                </div>
+  
+                  <table class="table">
+                      <thead class="table-dark">
+                        <tr>
+                          <th scope="col">id</th>
+                          <th scope="col">contractDate</th>
+                          <th scope="col">price</th>
+                          <th scope="col">statut</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let item of contrats">
+                        <tr>
+                          <td>{{item.contractId}}</td>
+                          <td>{{item.contractDate}}</td>
+                          <td>{{item.price}}</td>
+                          <td>{{item.statut}}</td>
+                          <td> <button  type="button" (click)="deleteOffer(item.contractId)" class="btn btn-danger" > <i class="bi bi-trash-fill"></i></button>
+                            <button class="btn btn-primary" > <i class="bi bi-pencil-fill"></i> </button>
+                              <button class="btn btn-primary" > <i class="bi bi-download" (click)="generatePDF(item)"></i>  </button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+          </div>
+      </div>
+  </div>

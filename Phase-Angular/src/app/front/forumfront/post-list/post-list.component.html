@@ -1,0 +1,153 @@
+
+  
+    <!-- Rest of your code -->
+    <app-navbarfront></app-navbarfront>
+<br>
+<br>
+<br>
+<br>
+
+<body>
+    
+    
+
+
+
+
+ <!-- Header Container / End -->
+
+ <section class="headings" style="background-image: url('bg-counter2.jpg');">
+    <div class="text-heading text-center">
+      <div class="container">
+        <h1>Blog</h1>
+        <h2><a routerLink="/posts" routerLinkActive="active" style="color: red; text-decoration: none;">POSTS</a>&nbsp;/<a routerLink="/news" routerLinkActive="active" style="color: rgb(255, 255, 255); text-decoration: none;">NEWS</a>&nbsp;</h2>
+      </div>
+    </div>
+  </section>
+<!-- END SECTION HEADINGS -->
+
+<!-- START SECTION BLOG -->
+<section class="blog blog-section">
+   
+  <div class="container">
+    
+      <div class="row">
+          <div class="col-lg-9 col-md-12 col-xs-12">
+            
+                  
+              
+              <div class="row space2 port">
+                  <div  *ngFor="let tempProduct of posts| filter:searchText | paginate  : {
+                    itemsPerPage: tableSize,
+                    currentPage: page,
+                    totalItems: count
+                  };
+                  let x = index" class="col-md-6 col-xs-12 product-container">
+                      <div class="news-item">
+                          <a href="blog-details.html" class="news-img-link">
+                              <div class="news-item-img">
+                                <a routerLink="/posts/{{ tempProduct.postId }}">
+                                <img style="width: 500px; height: 350px;" class="img-responsive" src="assets/images/{{ tempProduct.image }}" alt="blog image">
+                                </a>
+                              </div>
+                          </a>
+                          <div class="news-item-text">
+                            <a routerLink="/posts/{{ tempProduct.postId }}">
+                                 <h3>       {{tempProduct.title }}</h3></a>
+                              <div class="dates">
+                                  <span class="date">  {{tempProduct.postdate }}&nbsp;/</span>
+                                  <ul class="action-list pl-0">
+                                      <li class="action-item pl-2"><i class="fa fa-heart"></i> <span>306</span></li>
+                                      <li class="action-item"><i class="fa fa-comment"></i> <span>34</span></li>
+                                      <li class="action-item"><i class="fa fa-share-alt"></i> <span>122</span></li>
+                                  </ul>
+                              </div>
+                              <div class="news-item-descr big-news">
+                                <p>{{ tempProduct.postContent | slice:0:(tempProduct.postContent.length/4) }}...</p>
+                            </div>
+                              <div class="news-item-bottom">
+                                  <a href="blog-details.html" class="news-link">Read more...</a>
+                                  <div class="admin">
+                                      <p>By, {{getLastnameFromCookie()}} {{getFirstnameFromCookie()}} </p>
+                                      <img src="assets/images/testimonials/ts-3.jpg" alt="">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                 
+              </div>
+           
+          </div>
+          <aside class="col-lg-3 col-md-12">
+              <div class="widget">
+                <form class="form-header" onsubmit="return false;" method="GET">
+                    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" name="search" placeholder="Search for Posts ..." />
+                   
+                      <div class="search-hero">
+                             
+                            
+                          </div>
+                  </form>
+                 <br>
+                  <div class="recent-post">
+                      <h5 class="font-weight-bold mb-4">Popular Tags</h5>
+                      <div class="tags">
+                          <span><a  class="btn btn-outline-primary">Houses</a></span>
+                          <span><a  class="btn btn-outline-primary">Real Home</a></span>
+                      </div>
+                      <div class="tags">
+                          <span><a  class="btn btn-outline-primary">Baths</a></span>
+                          <span><a  class="btn btn-outline-primary">Beds</a></span>
+                      </div>
+                      <div class="tags">
+                          <span><a  class="btn btn-outline-primary">Garages</a></span>
+                          <span><a  class="btn btn-outline-primary">Family</a></span>
+                      </div>
+                      <div class="tags">
+                          <span><a  class="btn btn-outline-primary">Real Estates</a></span>
+                          <span><a  class="btn btn-outline-primary">Properties</a></span>
+                      </div>
+                      <div class="tags">
+                          <span><a  class="btn btn-outline-primary mb-0">Location</a></span>
+                          <span><a  class="btn btn-outline-primary mb-0">Price</a></span>
+                      </div>
+                  </div>
+                  <div class="recent-post pt-5">
+                      <h5 class="font-weight-bold mb-4">Recent Posts</h5>
+                      <div *ngFor="let i of posts.slice(-3)" class="recent-main">
+                        <div class="recent-img">
+                            <a><img style="width: 300px; height: 300px;" src="assets/images/{{ i.image }}" alt=""></a>
+                        </div>                                
+
+                        <div class="info-img">
+                            <a href="blog-details.html"><h6>{{i.title }}</h6></a>
+                            <p>{{i.postdate}}</p>
+                        </div>
+                    </div>
+                    <app-chatbot></app-chatbot>
+                   
+                      
+                  </div>
+              </div>
+          </aside>
+      </div>
+  
+      <br>
+      <nav aria-label="..." class="d-flex justify-content-center">
+       
+          <div class="d-flex justify-content-center">
+            <pagination-controls
+              previousLabel="Prev"
+              nextLabel="Next"
+              (pageChange)="onTableDataChange($event)"
+            >
+            </pagination-controls>
+          </div>
+      </nav>
+  </div>
+</section>
+
+
+<br>
+<app-footer></app-footer>

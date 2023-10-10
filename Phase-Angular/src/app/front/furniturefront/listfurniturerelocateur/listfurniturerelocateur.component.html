@@ -1,0 +1,79 @@
+<app-navbarfront></app-navbarfront>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<section class="featured portfolio bg-white-2 rec-pro full-l">
+    <div class="container-fluid">
+        <div class="sec-title">
+            <h2><span>Featured </span>Properties</h2>
+        </div>
+        <div class="row portfolio-items" style="position: relative; height: 1813.6px;">
+            <div class="item col-xl-6 col-lg-6 col-md-12 col-xs-12 landscapes sale"  *ngFor="let furniture of furnitureList">
+                <div class="project-single aos-init aos-animate" data-aos="fade-right" >
+                    <div class="project-inner project-head">
+                        <div class="homes">
+                            <!-- homes img -->
+                            <a href="single-property-1.html" class="homes-img">
+                                <div class="homes-tag button alt featured">Featured</div>
+                                <div class="homes-tag button alt sale" >For Sale</div>
+
+                                <img src="assets/images/{{ furniture.picture }}" alt="home-1" class="img-responsive">
+                            </a>
+                        </div>
+                       
+                    </div>
+                    <!-- homes content -->
+                    <div class="homes-content">
+                        <!-- homes address -->
+                        <h3><a href="single-property-1.html">{{furniture.price}}$</a></h3>
+                        <p class="homes-address mb-3">
+                            <a href="single-property-1.html">
+                                <i class="fa fa-map-marker"></i><span *ngIf="furniture.relocation">Location departure : {{furniture.relocation.locationdep}}</span>
+                                <br>
+                                <i class="fa fa-map-marker"></i>    <span *ngIf="furniture.relocation">Location Arriver : {{furniture.relocation.locationarr}}</span>
+                                <br>
+
+                                <span *ngIf="furniture.relocation" >Date de déménagement : {{ furniture.relocation.relocationdate| date }}</span>
+
+                            </a>
+                        </p>
+                        <!-- homes List -->
+                        <ul class="homes-list clearfix pb-3">
+                            <li class="the-icons">
+                                <i class="flaticon-bed mr-2" aria-hidden="true"></i>
+                                <span>weight :{{furniture.furnitureweight}}</span>
+                            </li>
+                            <li class="the-icons">
+                                <i class="flaticon-bathtub mr-2" aria-hidden="true"></i>
+                                <span>surface : {{furniture.surface}}</span>
+                            </li>
+                          
+                        </ul>
+                        <div class="price-properties footer pt-3 pb-0">
+                            <h3 class="title mt-3">
+                             <a href="single-property-1.html">{{furniture.price}}$</a>
+                            </h3>
+                            <div class="compare">
+                                <a href="#" title="Compare">
+                                    <i class="flaticon-compare"></i>
+                                </a>
+                                <a href="#" title="Share">
+                                    <i class="flaticon-share"></i>
+                                </a>
+                                <a href="#" title="Favorites">
+                                    <i class="flaticon-heart"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+  
+    </div>
+</section>
+

@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+<app-sidebar></app-sidebar>
+
+<!-- Content Start -->
+<div class="content">
+
+
+    <!-- Recent Sales Start -->
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <form (ngSubmit)="onSubmit()">
+                    <label>
+                      Détail du service :
+                      <input type="text" [(ngModel)]="delivery.servicedetail" name="servicedetail" required>
+                    </label>
+                  
+                    <label>
+                      Numéro de suivi :
+                      <select class="form-control" id="propertyType" required [(ngModel)]="delivery.track" name="propertyType">
+                        <option value="FOURGON">FOURGON</option>
+                        <option value="POIDS LOURD 10T">POIDS LOURD 10T</option>
+                        <option value="60M3 DIMENSIONS">60M3 DIMENSIONS</option>
+                      </select>
+                    </label>
+                  
+                    <button type="submit">Ajouter une livraison</button>
+                  </form>
+                  </div>
+                </div>
+                    </div>
+                </div>

@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+
+<app-sidebar></app-sidebar>
+
+<!-- Content Start -->
+<div class="content">
+
+    <!-- Recent Sales Start -->
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <table class="table">
+  <thead>
+ 
+  </thead>
+  <h1 class="mt-3 mb-3">Posts List</h1>
+
+</table>
+            </div>
+            <div class="table-responsive">
+                <button (click)="filterD()" class="btn btn-primary">
+                    Sort Asc 
+                  </button>
+                  <br>
+                  <br>
+                  <button (click)="filterA()" class="btn btn-primary">
+                      Sort Dsc    </button>
+                <div style="text-align:right; padding-bottom: 30px;"> <button routerLink="/addPost" type="button" class="btn btn-dark" style="color: white; font-weight: bold;" >Add Post</button></div>
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                    <thead>
+                      <tr class="text-dark">
+                        <th scope="col">#</th>
+                        <th scope="col">title</th>
+                        <th scope="col">image</th>
+                        <th scope="col">postContent</th>
+                        <th scope="col">postDate</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let i of list | paginate : { itemsPerPage: tableSize, currentPage: page, totalItems: count }; let x = index">
+                        <td>{{ i.postId }}</td>
+                        <td>{{i.title}}</td>
+                        <td><img style="width: 200px; height: 200px;" src="assets/images/{{ i.image }}" alt="Image Size 100x100"></td>
+                        <td style="width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ i.postContent| slice:0:(i.postContent.length/12) }}...</td>
+                        <td>{{ i.postdate }}</td>
+                        <td style="text-align: center;">
+                          <button type="button" class="btn btn-danger" (click)="deletepost(i.postId)"><i class="bi bi-trash-fill"></i></button>
+                          <button class="btn btn-primary" (click)="update(i)"><i class="bi bi-pencil-fill"></i></button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                <div class="d-flex justify-content-center">
+                    <pagination-controls
+                      previousLabel="Prev"
+                      nextLabel="Next"
+                      (pageChange)="onTableDataChange($event)"
+                    >
+                    </pagination-controls>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <!-- Recent Sales End -->

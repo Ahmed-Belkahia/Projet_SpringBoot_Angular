@@ -1,0 +1,13 @@
+
+
+<div class="chatbot-container">
+  <div class="chat-history">
+    <div *ngFor="let message of chatHistory" class="message-container" [ngClass]="{'from-user': message.from === 'user', 'from-chatbot': message.from === 'chatbot'}">
+      <div class="message">{{ message.message }}</div>
+    </div>
+  </div>
+  <div class="message-input">
+    <input type="text" [(ngModel)]="chatInput" placeholder="ChatBot...">
+    <button (click)="sendMessage()">Send</button>
+  </div>
+</div>

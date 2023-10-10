@@ -1,0 +1,65 @@
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .file-upload input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+  
+  .file-upload label {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: transparent;
+    color: rgb(9, 9, 9);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .my-address {
+    background-color: #f7f7f7;
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  .my-address h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .my-address input[type="number"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    transition: border-color 0.3s ease;
+  }
+  
+  .my-address input[type="password"]:focus {
+    outline: none;
+    border-color: #4caf50;
+  }
+  
+  .my-address .send-btn button {
+    width: 100%;
+    background-color: #3f443f;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .my-address .send-btn button:hover {
+    background-color: #281b60;
+  }
+  

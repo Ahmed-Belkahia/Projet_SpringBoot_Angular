@@ -1,0 +1,50 @@
+<section class="comments">
+  <h3 class="mb-5">If you like Our Posts leave a comment down bellow</h3>
+  <div class="row mb-4">
+      <ul *ngFor="let i of list | paginate
+      : {
+          itemsPerPage: tableSize,
+          currentPage: page,
+          totalItems: count
+        };
+  let x = index
+  " class="col-12 commented">
+          
+              <div class="col-md-2">
+                  <img src="bg-counter2.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="col-md-10 comments-info">
+                  <div class="comment-info">
+                      <h5 class="mb-1 inline-block">Anonymous</h5>
+                      <p class="mb-4 inline-block" style="margin-left: 5px;">{{i.commentDate}}</p>
+                    </div>
+                    
+                  <div class="d-flex justify-content-between">
+                    <p>{{ filterBadWords(i.commentContent) }}</p>
+
+                  
+                      <p>
+                          <button (click)="deleteOffer(i.commentId)" type="button" class="btn btn">
+                            <i class="bi bi-trash-fill"></i>
+                          </button>
+                        </p>
+                      
+                    </div>
+                    
+                    
+              </div>
+         
+      </ul>
+  </div>
+  <nav aria-label="..." class="d-flex justify-content-center">
+     
+      <div class="d-flex justify-content-center">
+        <pagination-controls
+          previousLabel="Prev"
+          nextLabel="Next"
+          (pageChange)="onTableDataChange($event)"
+        >
+        </pagination-controls>
+      </div>
+  </nav>
+</section>

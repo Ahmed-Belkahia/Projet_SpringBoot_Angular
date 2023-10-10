@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    <app-navbarfront></app-navbarfront>
+
+    
+        <div class="container">
+          <br>
+          <br>
+          <br>
+          <br>  <br>
+        
+          <br>
+
+        <h2>Liste des offres</h2>
+        <br>
+        <br>
+        <br>
+        <div class="list-group">
+          <div class="section-content section-content-p30">
+            <div class="container-fluid">
+                <div class="row">
+            
+          <div *ngFor="let i of list| filter:searchText | paginate 
+          : {
+              itemsPerPage: tableSize,
+              currentPage: page,
+              totalItems: count 
+            };
+             let x = index " class="col-md-3">
+             <div class="product-box">
+            <img src="assets/images/{{ i.picture }}" width="200" height="50" >
+            
+            <h1>{{ i.typeoffer }}</h1>
+            <div style="color: black; font-weight: bold;">PRICE : {{i.price }} <span>&#36;</span></div>
+            <div style="color: black; font-weight: bold;">ADDRESS :{{i.address }}</div>
+            <button class="the-icons" style="color: black; font-weight: bold;">
+              <i class="flaticon-square mr-2" aria-hidden="true"></i>
+               {{ i.surface }}
+          </button>
+            
+            </div>
+           
+            <button (click)="deleteOffer(i.sellid)" type="button" class="btn btn-danger"><i class="bi bi-arrow-through-heart-fill"></i> </button>
+           
+
+            <button  class="btn btn-secondary" style="width: 120px;"><i class="" (click)="detail(i)"> Add Contract</i></button>
+            <br>
+            <br>
+            <button  class="btn btn-secondary" style="width: 200px;"><i class="" (click)="demande(i)"> Demander Rendez_vous</i></button>
+            
+                 
+                
+             
+            
+         
+           
+
+          </div>
+        </div>
+       
+
+            <br>
+            <br>
+            <br>
+            <br>  <br>
+          
+            <br> <br>
+            <br>
+            <br>
+            <br>  <br>
+          
+            <br> <br>
+            <br>
+            <br>
+            <br>  <br>
+            <br>
+            <br>
+            <br>  <br>
+          
+            <div class="d-flex justify-content-center">
+              <pagination-controls
+                previousLabel="Prev"
+                nextLabel="Next"
+                (pageChange)="onTableDataChange($event)"
+              >
+              </pagination-controls>
+              </div>
+          
+        </div>
+      </div>
+    </div>  </div>
+  
+     
+    
+    <app-footer></app-footer>
+<!-- Wrapper / End -->
+
+
+
+<!-- Mirrored from code-theme.com/html/findhouses/add-property.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 23 Apr 2023 19:21:15 GMT -->
+</html>
+  

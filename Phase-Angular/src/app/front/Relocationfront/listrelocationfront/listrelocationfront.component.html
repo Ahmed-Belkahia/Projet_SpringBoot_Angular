@@ -1,0 +1,36 @@
+
+<app-navbarfront></app-navbarfront>
+<br>
+<br>
+<br>
+<br>
+<br>
+<section class="services-home rec-pro">
+    <div class="container-fluid">
+        <div class="section-title">
+            <h3>Relocation</h3>
+            <h2>List</h2>
+        </div>
+        <a href="addrelocationfront" class="int_btn">View destination <span class="btn_caret"><i class="fas fa-caret-right"></i></span></a>                   
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6 m-top-40 m-bottom-40 aos-init aos-animate" data-aos="fade-up" data-aos-delay="50" *ngFor="let relocation of listrelocation  ">
+                <div class="service bg-light-2 border-1 border-light box-shadow-1 box-shadow-2-hover">
+                    <div class="media">
+                        <i class="fa fa-home bg-base text-white rounded-100 box-shadow-1 p-top-5 p-bottom-5 p-right-5 p-left-5"></i>
+                    </div>
+                    <div class="agent-section p-top-35 p-bottom-30 p-right-25 p-left-25">
+                        <h3 class="m-bottom-15 text-bold-700">{{ relocation.relocationdate | date:'yyyy/MM/dd' }}</h3>
+                        <p>departure location : {{relocation.locationdep}}</p>
+                        <p>departure location : {{relocation.locationarr}}</p>
+
+                        <a (click)="openMap(relocation.locationdep , relocation.locationarr)" class="int_btn">View destination <span class="btn_caret"><i class="fas fa-caret-right"></i></span></a>                    </div>
+                </div>
+            </div>
+         
+          
+           
+        </div>
+    </div>
+</section>  
+<app-footer></app-footer>

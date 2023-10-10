@@ -1,0 +1,81 @@
+<app-navbar></app-navbar>
+
+<app-sidebar></app-sidebar>
+
+<!-- Content Start -->
+<div class="content">
+    <!-- Recent Sales Start -->
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4" >
+                <div class="searching">
+                    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="search  ">
+                  </div>
+            </div>
+            
+            <div class="table-responsive">
+                
+                <div style="text-align:left; padding-bottom: 50px;"> <button routerLink="/addoffer" type="button" class="btn btn-primary" >Add Offer</button></div>
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                    <thead>
+                        <tr class="text-dark">
+                            <th scope="col"></th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Title</th>
+                       
+                        <th scope="col">date</th>
+
+                        <th scope="col">surface</th>
+                        <th scope="col">picture</th>
+                        <th scope="col">Type offre</th>
+                        <th scope="col">price</th>
+                        <th scope="col">address</th>
+                       
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <tr *ngFor="let i of list| filter:searchText | paginate 
+                            : {
+                                itemsPerPage: tableSize,
+                                currentPage: page,
+                                totalItems: count 
+                              };
+                               let x = index ">
+                                <td>    {{ i.sellid }}</td>
+                               <td>{{i.description}}</td>
+                              <td>{{i.title}}</td>
+                                <td>{{i.datesell}}</td>
+                                <td>{{i.surface}}</td>
+                                <td><img src="assets/images/{{ i.picture }}" width="100"></td>
+                                <td>{{i.typeoffer}}</td>
+                                <td>{{i.price}}</td>
+                                
+    
+                                <td>{{i.address}}</td>
+                                
+                                <td style="text-align: center;"><button (click)="deleteOffer(i.sellid)" type="button" class="btn btn-danger"> <i class="bi bi-trash-fill"></i></button>
+                                    <button class="btn btn-primary" (click)="updateoffre(i)"> <i class="bi bi-pencil-fill"></i> </button>
+                                    <button class="btn btn-primary" (click)="detail(i)">
+                                        <i class="bi bi-eye-fill"></i>
+                                      </button>
+                                      
+                                  </td>
+                             
+                              
+                        </tr>   
+                    </tbody>
+                </table>
+                <div class="d-flex justify-content-center">
+                    <pagination-controls
+                      previousLabel="Prev"
+                      nextLabel="Next"
+                      (pageChange)="onTableDataChange($event)"
+                    >
+                    </pagination-controls>
+                  </div>
+                </div>
+        </div>
+    </div>
+    <!-- Recent Sales End -->
+</div>

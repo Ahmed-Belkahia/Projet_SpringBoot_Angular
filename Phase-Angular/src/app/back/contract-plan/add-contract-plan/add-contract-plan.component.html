@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+
+<app-sidebar></app-sidebar>
+<!-- Content Start -->
+<div class="content">
+
+
+
+
+
+
+    <!-- Recent Sales Start -->
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <div class="search-hero">
+                    <input class="form-control" type="text" name="search" autocomplete="off"
+                        placeholder="&#61442;  Start searching for a hero by id or name or country">
+                </div>
+
+                <h3> Add Rental Contrat</h3>
+            </div>
+            <form (ngSubmit)="addPlanContrat()">
+                
+                <button style="margin-top: 20px; width: 100%;" type="submit"  class="btn btn-primary">Add</button>
+            </form>
+        </div>
+    </div>
+</div>

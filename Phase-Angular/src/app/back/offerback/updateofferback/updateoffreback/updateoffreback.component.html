@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.center {
+			width: 50%;
+			margin: auto;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+
+
+<app-navbar></app-navbar>
+<div class="center">
+<div id="profile-settings" class="tab-pane fade active show">
+  <div class="pt-3">
+      <div class="settings-form">
+          <h4 class="text-primary">
+            Update of offer</h4>
+          
+          <form  (ngSubmit)="updateoffre()">
+              <div class="form-row">
+                  <div style="display: inline-block; width: 50%; padding-right: 30px;" class="form-group col-md-6">
+                      <label>Description</label>
+                      <input type="text" id="description" name="description" placeholder="description" class="form-control" [(ngModel)]="saleoffer.description" required>
+                  </div>
+                  <div style="display: inline-block; width: 50%;" class="form-group col-md-6">
+                      <label>Title</label>
+                      <input type="text" id="title" name="title" placeholder="title" class="form-control" [(ngModel)]="saleoffer.title" required>
+                  </div>
+              </div>
+              <div class="form-row">
+              <div class="form-group col-md-6" style="display: inline-block; width: 50%; padding-right: 30px;" >
+                <label>Price</label>
+                <input type="number" name="price" id="price" placeholder="price" class="form-control" [(ngModel)]="saleoffer.price" required>
+            </div>
+            <div class="form-group col-md-6"  style="display: inline-block; width: 50%;">
+              <label>Adresse</label>
+              <input type="text" name="address" id="address" name="address" placeholder="address" class="form-control" [(ngModel)]="saleoffer.address" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+              <div class="form-group col-md-6" id="phone"style="display: inline-block; width: 50%; padding-right: 30px;">
+                  <label>Date</label>
+                  <input type="date" name="datesell" placeholder="datesell" class="form-control" [(ngModel)]="saleoffer.datesell" required>
+              </div>
+
+                  <div class="form-group col-md-6" id="address" style="display: inline-block; width: 50%;">
+                      <label>Surface</label>
+                      <input type="number" name="surface" class="form-control" [(ngModel)]="saleoffer.surface" required>
+                  </div>
+                  </div>
+                <div class="form-row" >
+                    <div class="form-floating mb-4">
+                        <input type="file" (change)="onFileSelected($event)">
+                        
+                                                     
+                    </div>
+                    <div class="form-group col-md-6" id="address" style="display: inline-block; width: 50%;">
+                    <label for="type-offer">Type d'offre :</label>
+                    <select class="form-control" name="typeoffer" id="typeoffer" [(ngModel)]="saleoffer.typeoffer">
+                        <option *ngFor="let type of typesOffre" [value]="type">{{ type }}</option>
+                      </select>
+                    </div>
+                
+                </div>
+            
+            <br>
+              <div class="form-group">
+              </div>
+              <button style="margin-top: 20px; width: 100%;" type="submit"  class="btn btn-primary">UPDATE</button>
+          </form>
+      </div>
+  </div>
+</div>
+</div>
+<app-sidebar></app-sidebar>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<app-navbarfront></app-navbarfront>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8">
+      <h3 class="mb-4">List Of Plan Contrat</h3>
+    </div>
+    <div class="col-md-4">
+      
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img src="assets/images/{{ offre.picture }}" class="card-img-top" alt="Image Size 290x200">
+        <div class="card-body">
+          <h5 class="card-title">{{ offre.title }}</h5>
+          <p class="card-text">{{ offre.description }}</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <i class="bi bi-door-closed"></i>space room : {{ offre.room1 }}
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-door-open"></i> space room :{{ offre.room2 }}
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-bath"></i> space wc :{{ offre.wc }}
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-person"></i> {{ offre.livingroom }}
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-credit-card"></i> {{ offre.price }}
+            </li>
+          </ul>
+          <div style="text-align:right; padding-bottom: 30px;"> <button type="button" (click)="createContract()" class="btn btn-dark" style="color: white; font-weight: bold;">
+            Add Plan Contrat</button>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
